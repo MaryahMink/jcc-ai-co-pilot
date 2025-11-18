@@ -10,27 +10,27 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
+    <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border shadow-depth">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">J</span>
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-teal flex items-center justify-center shadow-glow">
+              <span className="text-primary-foreground font-bold text-xl">J</span>
             </div>
             <div>
-              <h1 className="text-lg font-semibold text-foreground">JCC AI Hub</h1>
-              <p className="text-xs text-muted-foreground">Automation Command Center</p>
+              <h1 className="text-xl font-bold text-foreground">JCC AI Hub</h1>
+              <p className="text-xs text-primary font-medium">Automation Command Center</p>
             </div>
           </div>
           
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-secondary transition-colors"
-                activeClassName="bg-primary/10 text-primary"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-foreground hover:bg-primary/5 transition-all duration-300"
+                activeClassName="bg-gradient-teal text-primary-foreground shadow-glow"
               >
                 <item.icon className="w-4 h-4" />
                 {item.label}
@@ -45,8 +45,8 @@ const Navigation = () => {
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
-                className="p-2 rounded-lg text-foreground hover:bg-secondary transition-colors"
-                activeClassName="bg-primary/10 text-primary"
+                className="p-3 rounded-xl text-foreground hover:bg-primary/5 transition-all duration-300"
+                activeClassName="bg-gradient-teal text-primary-foreground shadow-glow"
               >
                 <item.icon className="w-5 h-5" />
               </NavLink>

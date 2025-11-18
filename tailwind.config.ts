@@ -50,9 +50,18 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        'gradient-teal': 'var(--gradient-teal-primary)',
+        'gradient-teal-atmospheric': 'var(--gradient-teal-atmospheric)',
+        'gradient-teal-deep': 'var(--gradient-teal-deep)',
+        'gradient-accent': 'var(--gradient-accent-glow)',
+        'gradient-card': 'var(--gradient-card)',
+      },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'card-hover': 'var(--shadow-card-hover)',
+        'glow': 'var(--shadow-glow)',
+        'depth': 'var(--shadow-depth)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,10 +85,25 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 20px hsl(180 60% 45% / 0.3)" },
+          "50%": { opacity: "0.9", boxShadow: "0 0 32px hsl(180 60% 45% / 0.5)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 3s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
       },
     },
   },
