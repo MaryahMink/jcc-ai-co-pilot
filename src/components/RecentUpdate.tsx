@@ -12,18 +12,20 @@ interface RecentUpdateProps {
 
 const RecentUpdate = ({ title, description, date, category, to }: RecentUpdateProps) => {
   return (
-    <Link to={to}>
-      <Card className="shadow-card hover:shadow-card-hover transition-all duration-200 hover:-translate-y-1">
-        <CardContent className="p-5">
-          <div className="flex items-start justify-between gap-3 mb-2">
-            <h4 className="font-semibold text-foreground">{title}</h4>
-            <span className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent font-medium whitespace-nowrap">
+    <Link to={to} className="group">
+      <Card className="bg-gradient-card shadow-card hover:shadow-depth transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-teal opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+        
+        <CardContent className="p-6 relative z-10">
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <h4 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">{title}</h4>
+            <span className="text-xs px-3 py-1.5 rounded-full bg-accent/15 text-accent font-semibold whitespace-nowrap border border-accent/20">
               {category}
             </span>
           </div>
-          <p className="text-sm text-muted-foreground mb-3">{description}</p>
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Clock className="w-3 h-3" />
+          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{description}</p>
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <Clock className="w-4 h-4" />
             <span>{date}</span>
           </div>
         </CardContent>

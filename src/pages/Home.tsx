@@ -5,25 +5,34 @@ import { Mail, MessageSquare, CheckSquare } from "lucide-react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Atmospheric Background */}
+      <div className="absolute inset-0 bg-gradient-teal-atmospheric pointer-events-none" />
+      
       <Navigation />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12 relative z-10">
         {/* Hero Section */}
-        <section className="mb-12 text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Your Digital Co-Pilot
+        <section className="mb-20 text-center max-w-4xl mx-auto">
+          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <span className="text-sm font-semibold text-primary">AI Command Center</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+            Your Digital <span className="bg-gradient-teal bg-clip-text text-transparent">Co-Pilot</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Navigate automations, tools, and best-practice guidance with clarity and confidence. 
             A streamlined command center for Jacksonville Civic Council operations.
           </p>
         </section>
 
         {/* Quick Access Cards */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-foreground mb-6">Quick Access</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-1 w-12 bg-gradient-teal rounded-full" />
+            <h2 className="text-3xl font-bold text-foreground">Quick Access</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
             <WorkflowCard
               title="Email & Calendar"
               description="Automate Gmail responses, calendar scheduling, and meeting reminders with AI-powered workflows."
@@ -49,10 +58,13 @@ const Home = () => {
         </section>
 
         {/* Two Column Layout */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Recently Updated */}
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-6">Recently Updated</h2>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-accent rounded-full" />
+              <h2 className="text-3xl font-bold text-foreground">Recently Updated</h2>
+            </div>
             <div className="space-y-4">
               <RecentUpdate
                 title="Gmail Auto-Response Enhancement"
@@ -80,7 +92,10 @@ const Home = () => {
 
           {/* Recommended Guides */}
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-6">Recommended Guides</h2>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-1 w-12 bg-gradient-teal-deep rounded-full" />
+              <h2 className="text-3xl font-bold text-foreground">Recommended Guides</h2>
+            </div>
             <div className="space-y-4">
               <RecentUpdate
                 title="Best Practices for AI Prompts"
