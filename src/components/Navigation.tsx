@@ -1,9 +1,9 @@
 import { NavLink } from "@/components/NavLink";
-import { Home, Workflow, BookOpen, HelpCircle, User } from "lucide-react";
+import { Home, Workflow, BookOpen, HelpCircle } from "lucide-react";
 import jccLogoIcon from "@/assets/jcc-logo-icon.png";
 import ThemeToggle from "./ThemeToggle";
+import UserMenu from "./UserMenu";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const navItems = [
@@ -45,16 +45,7 @@ const Navigation = () => {
             ))}
             <div className="border-l border-white/30 h-8 mx-2" />
             <ThemeToggle />
-            <Link to="/auth">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-xl text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
-                aria-label="Sign in"
-              >
-                <User className="w-5 h-5" />
-              </Button>
-            </Link>
+            <UserMenu />
           </div>
 
           {/* Mobile menu */}
@@ -71,15 +62,7 @@ const Navigation = () => {
               </NavLink>
             ))}
             <ThemeToggle />
-            <Link to="/auth">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="p-3 rounded-xl text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
-              >
-                <User className="w-5 h-5" />
-              </Button>
-            </Link>
+            <UserMenu />
           </div>
         </div>
       </div>

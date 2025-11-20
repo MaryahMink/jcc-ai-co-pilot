@@ -2,6 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Automations from "./pages/Automations";
 import AutomationDetail from "./pages/AutomationDetail";
+import WorkflowSetup from "./pages/WorkflowSetup";
+import Integrations from "./pages/Integrations";
+import Settings from "./pages/Settings";
 import Guides from "./pages/Guides";
 import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
@@ -13,6 +16,10 @@ const App = () => (
     <Route path="/auth" element={<Auth />} />
     <Route path="/automations" element={<Automations />} />
     <Route path="/automations/:id" element={<AutomationDetail />} />
+    <Route path="/automations/:id/setup" element={<WorkflowSetup />} />
+    <Route path="/integrations" element={<Integrations />} />
+    <Route path="/settings" element={<Settings />} />
+    <Route path="/saved-workflows" element={<Automations />} />
     <Route path="/guides" element={<Guides />} />
     <Route path="/guides/:id" element={<Guides />} />
     <Route path="/faq" element={<FAQ />} />

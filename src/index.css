@@ -39,6 +39,10 @@ All colors MUST be HSL.
     --accent: 162 100% 45%; /* #00E6A5 */
     --accent-foreground: 0 0% 100%;
     
+    /* Success color (matches Highlight Green) */
+    --success: 162 100% 45%;
+    --success-foreground: 0 0% 100%;
+    
     /* Secondary surfaces - subtle gray */
     --secondary: 0 0% 96%;
     --secondary-foreground: 180 65% 15%;
@@ -78,42 +82,47 @@ All colors MUST be HSL.
   }
   
   .dark {
-    /* Dark mode layered backgrounds */
-    --background: 180 100% 8%; /* Deep teal-black */
-    --background-layer-1: 180 100% 10%;
-    --background-layer-2: 180 100% 12%;
-    --background-layer-3: 180 60% 20%;
-    --foreground: 0 0% 98%;
+    /* Dark mode - Deep teal, midnight-blue, charcoal-gray */
+    --background: 200 50% 6%;
+    --background-layer-1: 200 40% 9%;
+    --background-layer-2: 200 35% 12%;
+    --background-layer-3: 200 30% 16%;
+    --foreground: 0 0% 95%;
     
-    /* Dark mode cards */
-    --card: 180 100% 12%;
-    --card-foreground: 0 0% 98%;
+    /* Dark mode cards - layered graphite */
+    --card: 198 45% 10%;
+    --card-foreground: 0 0% 95%;
     
     /* Dark mode popover */
-    --popover: 180 100% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 198 45% 10%;
+    --popover-foreground: 0 0% 95%;
     
-    /* Teal stays vibrant in dark mode */
-    --primary: 180 60% 45%;
+    /* Teal stays vibrant with soft-glow in dark mode */
+    --primary: 184 73% 50%;
     --primary-foreground: 0 0% 100%;
     
-    --teal-medium: 180 100% 25%;
+    --teal-medium: 184 73% 45%;
     --teal-medium-foreground: 0 0% 100%;
     
-    --primary-dark: 180 100% 18%;
+    --primary-dark: 184 91% 17%;
     --primary-dark-foreground: 0 0% 100%;
     
-    /* Accent stays bright */
+    /* Accent stays bright - Highlight Green glow */
     --accent: 162 100% 50%;
     --accent-foreground: 0 0% 100%;
     
-    /* Dark mode muted */
-    --muted: 180 100% 15%;
-    --muted-foreground: 180 20% 70%;
+    /* Dark mode secondary - lighter graphite */
+    --secondary: 200 30% 15%;
+    --secondary-foreground: 0 0% 95%;
+    
+    /* Dark mode muted - layered gray */
+    --muted: 200 20% 18%;
+    --muted-foreground: 0 0% 70%;
     
     /* Dark mode borders */
-    --border: 180 60% 20%;
-    --input: 180 60% 22%;
+    --border: 200 30% 20%;
+    --input: 200 30% 20%;
+    --ring: 184 73% 50%;
   }
 }
 
