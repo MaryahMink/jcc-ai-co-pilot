@@ -29,7 +29,7 @@ const Automations = () => {
               title="Gmail Auto-Responder"
               description="Intelligent email responses based on sentiment analysis, keywords, and priority rules."
               icon={Inbox}
-              to="/automations/email-calendar"
+              to="/automations/gmail-auto-responder/setup"
             />
             <WorkflowCard
               title="Calendar Sync & Scheduling"
