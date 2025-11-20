@@ -8,8 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base surfaces */
-    --background: 0 0% 98%;
+    /* Layered Gray Backgrounds - from mockup */
+    --background: 0 0% 96%; /* #F4F5F6 */
+    --background-layer-1: 0 0% 92%; /* #EBECEE */
+    --background-layer-2: 0 0% 87%; /* #DEE0E2 */
+    --background-layer-3: 0 0% 78%; /* #C7C9CB */
     --foreground: 180 65% 15%;
     
     /* Card surfaces - crisp white */
@@ -20,16 +23,20 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 180 65% 15%;
     
-    /* JCC Teal - Primary brand color */
-    --primary: 180 60% 45%;
+    /* JCC Teal Palette - from mockup */
+    --primary: 180 60% 31%; /* #208591 - medium teal */
     --primary-foreground: 0 0% 100%;
     
+    /* Medium Teal */
+    --teal-medium: 180 100% 20%; /* #00666E */
+    --teal-medium-foreground: 0 0% 100%;
+    
     /* Darkest Teal - Deep primary variant */
-    --primary-dark: 180 65% 25%;
+    --primary-dark: 180 100% 12%; /* #053A40 */
     --primary-dark-foreground: 0 0% 100%;
     
-    /* Highlight Green - Accent color */
-    --accent: 150 55% 50%;
+    /* Highlight Green - Accent CTA color */
+    --accent: 162 100% 45%; /* #00E6A5 */
     --accent-foreground: 0 0% 100%;
     
     /* Secondary surfaces - subtle gray */
@@ -49,22 +56,25 @@ All colors MUST be HSL.
     --input: 180 15% 90%;
     --ring: 180 60% 45%;
     
-    /* Radius - rounded cards */
-    --radius: 0.75rem;
+    /* Radius - rounded cards (16-20px from mockup) */
+    --radius: 1rem;
     
     /* Custom design tokens */
-    --shadow-card: 0 2px 8px -2px hsl(180 60% 45% / 0.08);
-    --shadow-card-hover: 0 8px 32px -8px hsl(180 60% 45% / 0.2);
-    --shadow-glow: 0 0 32px hsl(180 60% 45% / 0.15);
+    --shadow-card: 0 4px 16px -4px hsl(180 60% 31% / 0.1);
+    --shadow-card-hover: 0 8px 32px -8px hsl(180 60% 31% / 0.2);
+    --shadow-elevated: 0 8px 24px -6px hsl(180 100% 12% / 0.15);
+    --shadow-glow: 0 0 32px hsl(162 100% 45% / 0.2);
     --shadow-depth: 0 12px 40px -12px hsl(180 65% 15% / 0.12);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Gradients */
-    --gradient-teal-primary: linear-gradient(135deg, hsl(180 60% 45%) 0%, hsl(180 65% 35%) 100%);
-    --gradient-teal-atmospheric: linear-gradient(180deg, hsl(180 60% 45% / 0.05) 0%, hsl(180 60% 45% / 0.02) 100%);
-    --gradient-teal-deep: linear-gradient(135deg, hsl(180 65% 25%) 0%, hsl(180 70% 15%) 100%);
-    --gradient-accent-glow: linear-gradient(135deg, hsl(150 55% 50%) 0%, hsl(160 60% 45%) 100%);
+    /* Layered Background Gradients - mockup style */
+    --gradient-hero: linear-gradient(135deg, hsl(180 100% 20%) 0%, hsl(180 100% 12%) 100%);
+    --gradient-hero-overlay: linear-gradient(135deg, hsl(180 60% 31% / 0.4) 0%, hsl(180 100% 12% / 0.6) 100%);
+    --gradient-teal-atmospheric: linear-gradient(180deg, hsl(180 60% 31% / 0.08) 0%, hsl(180 60% 31% / 0.02) 100%);
+    --gradient-teal-deep: linear-gradient(135deg, hsl(180 100% 20%) 0%, hsl(180 100% 12%) 100%);
+    --gradient-accent-glow: linear-gradient(135deg, hsl(162 100% 45%) 0%, hsl(162 100% 38%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(180 60% 98%) 100%);
+    --gradient-layer: linear-gradient(180deg, hsl(0 0% 96%) 0%, hsl(0 0% 92%) 100%);
   }
 }
 

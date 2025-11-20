@@ -1,5 +1,6 @@
 import { NavLink } from "@/components/NavLink";
 import { Home, Workflow, BookOpen, HelpCircle } from "lucide-react";
+import jccLogo from "@/assets/jcc-logo.svg";
 
 const Navigation = () => {
   const navItems = [
@@ -10,16 +11,19 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border shadow-depth">
-      <div className="container mx-auto px-4">
+    <nav className="sticky top-0 z-50 bg-teal-medium backdrop-blur-xl border-b border-primary-dark/20 shadow-elevated">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-teal flex items-center justify-center shadow-glow">
-              <span className="text-primary-foreground font-bold text-xl">J</span>
-            </div>
+          <div className="flex items-center gap-4">
+            <img 
+              src={jccLogo} 
+              alt="Jacksonville Civic Council" 
+              className="h-10 w-auto object-contain"
+            />
+            <div className="border-l border-white/30 h-8" />
             <div>
-              <h1 className="text-xl font-bold text-foreground">JCC AI Hub</h1>
-              <p className="text-xs text-primary font-medium">Automation Command Center</p>
+              <h1 className="text-lg font-bold text-white tracking-wide">Jacksonville Civic Council</h1>
+              <p className="text-xs text-accent font-semibold uppercase tracking-wider">AI Command Center</p>
             </div>
           </div>
           
@@ -29,8 +33,8 @@ const Navigation = () => {
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-foreground hover:bg-primary/5 transition-all duration-300"
-                activeClassName="bg-gradient-teal text-primary-foreground shadow-glow"
+                className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
+                activeClassName="bg-white/20 text-white shadow-glow"
               >
                 <item.icon className="w-4 h-4" />
                 {item.label}
@@ -45,8 +49,8 @@ const Navigation = () => {
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
-                className="p-3 rounded-xl text-foreground hover:bg-primary/5 transition-all duration-300"
-                activeClassName="bg-gradient-teal text-primary-foreground shadow-glow"
+                className="p-3 rounded-xl text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
+                activeClassName="bg-white/20 text-white shadow-glow"
               >
                 <item.icon className="w-5 h-5" />
               </NavLink>
