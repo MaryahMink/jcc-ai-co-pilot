@@ -3,6 +3,9 @@ import Home from "./pages/Home";
 import Automations from "./pages/Automations";
 import AutomationDetail from "./pages/AutomationDetail";
 import WorkflowSetup from "./pages/WorkflowSetup";
+import WorkflowBuilder from "./pages/WorkflowBuilder";
+import TeamAnalytics from "./pages/TeamAnalytics";
+import TeamCollaboration from "./pages/TeamCollaboration";
 import Integrations from "./pages/Integrations";
 import Settings from "./pages/Settings";
 import Guides from "./pages/Guides";
@@ -19,6 +22,9 @@ const App = () => (
     <Route path="/automations" element={<Automations />} />
     <Route path="/automations/:id" element={<AutomationDetail />} />
     <Route path="/automations/:id/setup" element={<WorkflowSetup />} />
+    <Route path="/automations/:id/builder" element={<WorkflowBuilder />} />
+    <Route path="/team" element={<TeamCollaboration />} />
+    <Route path="/team/analytics" element={<TeamAnalytics />} />
     <Route path="/integrations" element={<Integrations />} />
     <Route path="/settings" element={<Settings />} />
     <Route path="/saved-workflows" element={<Automations />} />
