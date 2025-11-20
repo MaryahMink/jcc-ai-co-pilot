@@ -84,17 +84,17 @@ All colors MUST be HSL.
   .dark {
     /* Cinematic Dark Mode - True blacks, deep teals, rich charcoals */
     --background: 0 0% 0%; /* #000000 - True black */
-    --background-layer-1: 200 30% 2%; /* #050708 - Near black */
-    --background-layer-2: 200 30% 4%; /* #0A0D0E - Rich charcoal */
-    --background-layer-3: 200 25% 7%; /* #111517 - Deep graphite */
+    --background-layer-1: 180 30% 2%; /* #050708 - Near black with teal hint */
+    --background-layer-2: 180 25% 4%; /* #0A0D0E - Rich charcoal with teal */
+    --background-layer-3: 180 20% 6%; /* #111517 - Deep graphite with teal */
     --foreground: 0 0% 98%; /* Crisp white text */
     
-    /* Dark mode cards - True black and rich charcoal */
-    --card: 0 0% 0%; /* #000000 - True black */
+    /* Dark mode cards - True black with subtle teal tint */
+    --card: 180 20% 3%; /* Near-black with subtle teal */
     --card-foreground: 0 0% 98%;
     
     /* Dark mode popover - Rich charcoal */
-    --popover: 200 30% 4%; /* #0A0D0E - Rich charcoal */
+    --popover: 180 25% 4%; /* #0A0D0E - Rich charcoal with teal */
     --popover-foreground: 0 0% 98%;
     
     /* Vibrant teal with intense glow in dark mode */
@@ -115,12 +115,12 @@ All colors MUST be HSL.
     --success: 162 100% 55%;
     --success-foreground: 0 0% 0%;
     
-    /* Dark mode secondary - Deep graphite */
-    --secondary: 200 25% 10%;
+    /* Dark mode secondary - Deep graphite with teal */
+    --secondary: 180 20% 8%;
     --secondary-foreground: 0 0% 95%;
     
-    /* Dark mode muted - Rich subtle graphite */
-    --muted: 200 20% 12%;
+    /* Dark mode muted - Rich subtle graphite with teal */
+    --muted: 180 15% 10%;
     --muted-foreground: 0 0% 70%;
     
     /* Dark mode borders - Teal-tinted with glow */
