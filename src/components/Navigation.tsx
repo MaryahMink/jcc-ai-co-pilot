@@ -3,6 +3,7 @@ import { Home, Workflow, BookOpen, HelpCircle } from "lucide-react";
 import jccLogoIcon from "@/assets/jcc-logo-icon.png";
 import ThemeToggle from "./ThemeToggle";
 import UserMenu from "./UserMenu";
+import NotificationPanel from "./NotificationPanel";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -44,6 +45,7 @@ const Navigation = () => {
               </NavLink>
             ))}
             <div className="border-l border-white/30 h-8 mx-2" />
+            <NotificationPanel />
             <ThemeToggle />
             <UserMenu />
           </div>
@@ -61,6 +63,7 @@ const Navigation = () => {
                 <item.icon className="w-5 h-5" />
               </NavLink>
             ))}
+            <NotificationPanel />
             <ThemeToggle />
             <UserMenu />
           </div>

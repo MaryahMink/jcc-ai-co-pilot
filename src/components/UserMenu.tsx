@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { User, Settings, Link as LinkIcon, BookmarkCheck, LogOut } from "lucide-react";
+import { User, Settings, Link as LinkIcon, BookmarkCheck, LogOut, Activity } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
@@ -92,6 +92,12 @@ const UserMenu = () => {
           <Link to="/integrations" className="cursor-pointer">
             <LinkIcon className="mr-2 h-4 w-4" />
             <span>Connected Apps</span>
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/analytics" className="cursor-pointer">
+            <Activity className="mr-2 h-4 w-4" />
+            <span>Analytics</span>
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>

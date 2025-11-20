@@ -8,6 +8,8 @@ import Settings from "./pages/Settings";
 import Guides from "./pages/Guides";
 import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
+import Analytics from "./pages/Analytics";
+import Templates from "./pages/Templates";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -20,6 +22,8 @@ const App = () => (
     <Route path="/integrations" element={<Integrations />} />
     <Route path="/settings" element={<Settings />} />
     <Route path="/saved-workflows" element={<Automations />} />
+    <Route path="/analytics" element={<Analytics />} />
+    <Route path="/templates" element={<Templates />} />
     <Route path="/guides" element={<Guides />} />
     <Route path="/guides/:id" element={<Guides />} />
     <Route path="/faq" element={<FAQ />} />
