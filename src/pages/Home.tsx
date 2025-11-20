@@ -37,7 +37,7 @@ const Home = () => {
       </section>
 
       {/* Main Content - Layered Gray Background */}
-      <main className="relative bg-gradient-layer text-slate-950 bg-slate-900">
+      <main className="relative bg-gradient-layer text-slate-50 bg-gray-950">
         {/* Quick Access Section */}
         <section ref={quickAccessAnim.ref} className={`container mx-auto px-4 py-16 relative z-10 scroll-fade-in ${quickAccessAnim.isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12">Quick Access</h2>
