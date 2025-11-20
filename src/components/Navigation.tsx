@@ -27,7 +27,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-4 group">
-            <img alt="Jacksonville Civic Council" className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110" src="/lovable-uploads/8d4dff3d-bc1b-4c09-b126-dc45689e38f0.png" />
+            <img alt="Jacksonville Civic Council" className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110" src="/lovable-uploads/3d648493-3495-41ee-ae0a-94485f151789.png" />
             <div className="border-l border-white/30 h-8" />
             <div>
               <h1 className="text-lg font-bold text-white tracking-wide">Jacksonville Civic Council</h1>
