@@ -82,19 +82,19 @@ All colors MUST be HSL.
   }
   
   .dark {
-    /* Cinematic Dark Mode - Deep teals, rich charcoals, true blacks */
-    --background: 180 100% 3%; /* #000F11 - Near black with teal tint */
-    --background-layer-1: 180 100% 5%; /* #001A1D - Deep teal black */
-    --background-layer-2: 180 95% 7%; /* #002B33 - Dark teal */
-    --background-layer-3: 180 80% 10%; /* #003840 - Medium dark teal */
+    /* Cinematic Dark Mode - True blacks, deep teals, rich charcoals */
+    --background: 0 0% 0%; /* #000000 - True black */
+    --background-layer-1: 200 30% 2%; /* #050708 - Near black */
+    --background-layer-2: 200 30% 4%; /* #0A0D0E - Rich charcoal */
+    --background-layer-3: 200 25% 7%; /* #111517 - Deep graphite */
     --foreground: 0 0% 98%; /* Crisp white text */
     
-    /* Dark mode cards - Rich charcoal with dramatic depth */
-    --card: 200 30% 6%; /* #0A0D0E - Rich charcoal */
+    /* Dark mode cards - True black and rich charcoal */
+    --card: 0 0% 0%; /* #000000 - True black */
     --card-foreground: 0 0% 98%;
     
-    /* Dark mode popover - Deep graphite */
-    --popover: 200 25% 8%; /* #0F1314 - Graphite */
+    /* Dark mode popover - Rich charcoal */
+    --popover: 200 30% 4%; /* #0A0D0E - Rich charcoal */
     --popover-foreground: 0 0% 98%;
     
     /* Vibrant teal with intense glow in dark mode */
