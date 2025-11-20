@@ -76,6 +76,45 @@ All colors MUST be HSL.
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(180 60% 98%) 100%);
     --gradient-layer: linear-gradient(180deg, hsl(0 0% 96%) 0%, hsl(0 0% 92%) 100%);
   }
+  
+  .dark {
+    /* Dark mode layered backgrounds */
+    --background: 180 100% 8%; /* Deep teal-black */
+    --background-layer-1: 180 100% 10%;
+    --background-layer-2: 180 100% 12%;
+    --background-layer-3: 180 60% 20%;
+    --foreground: 0 0% 98%;
+    
+    /* Dark mode cards */
+    --card: 180 100% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    /* Dark mode popover */
+    --popover: 180 100% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Teal stays vibrant in dark mode */
+    --primary: 180 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --teal-medium: 180 100% 25%;
+    --teal-medium-foreground: 0 0% 100%;
+    
+    --primary-dark: 180 100% 18%;
+    --primary-dark-foreground: 0 0% 100%;
+    
+    /* Accent stays bright */
+    --accent: 162 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Dark mode muted */
+    --muted: 180 100% 15%;
+    --muted-foreground: 180 20% 70%;
+    
+    /* Dark mode borders */
+    --border: 180 60% 20%;
+    --input: 180 60% 22%;
+  }
 }
 
 @layer base {
@@ -84,6 +123,40 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  /* Scroll animation utilities */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

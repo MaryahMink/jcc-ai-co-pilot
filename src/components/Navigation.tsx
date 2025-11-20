@@ -1,6 +1,9 @@
 import { NavLink } from "@/components/NavLink";
-import { Home, Workflow, BookOpen, HelpCircle } from "lucide-react";
-import jccLogo from "@/assets/jcc-logo.svg";
+import { Home, Workflow, BookOpen, HelpCircle, User } from "lucide-react";
+import jccLogoIcon from "@/assets/jcc-logo-icon.png";
+import ThemeToggle from "./ThemeToggle";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const navItems = [
@@ -14,20 +17,20 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50 bg-teal-medium backdrop-blur-xl border-b border-primary-dark/20 shadow-elevated">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center gap-4 group">
             <img 
-              src={jccLogo} 
+              src={jccLogoIcon} 
               alt="Jacksonville Civic Council" 
-              className="h-10 w-auto object-contain"
+              className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
             />
             <div className="border-l border-white/30 h-8" />
             <div>
               <h1 className="text-lg font-bold text-white tracking-wide">Jacksonville Civic Council</h1>
               <p className="text-xs text-accent font-semibold uppercase tracking-wider">AI Command Center</p>
             </div>
-          </div>
+          </Link>
           
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-3">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -40,6 +43,18 @@ const Navigation = () => {
                 {item.label}
               </NavLink>
             ))}
+            <div className="border-l border-white/30 h-8 mx-2" />
+            <ThemeToggle />
+            <Link to="/auth">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-xl text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
+                aria-label="Sign in"
+              >
+                <User className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu */}
@@ -55,6 +70,16 @@ const Navigation = () => {
                 <item.icon className="w-5 h-5" />
               </NavLink>
             ))}
+            <ThemeToggle />
+            <Link to="/auth">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="p-3 rounded-xl text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
+              >
+                <User className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

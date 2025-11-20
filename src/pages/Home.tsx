@@ -4,8 +4,12 @@ import RecentUpdate from "@/components/RecentUpdate";
 import { Mail, MessageSquare, CheckSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Home = () => {
+  const quickAccessAnim = useScrollAnimation();
+  const recentUpdatesAnim = useScrollAnimation();
+  const guidesAnim = useScrollAnimation();
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <Navigation />
@@ -40,7 +44,10 @@ const Home = () => {
       {/* Main Content - Layered Gray Background */}
       <main className="relative bg-gradient-layer">
         {/* Quick Access Section */}
-        <section className="container mx-auto px-4 py-16 relative z-10">
+        <section 
+          ref={quickAccessAnim.ref}
+          className={`container mx-auto px-4 py-16 relative z-10 scroll-fade-in ${quickAccessAnim.isVisible ? 'visible' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12">Quick Access</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <WorkflowCard
@@ -72,7 +79,10 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Recently Updated */}
-              <div>
+              <div 
+                ref={recentUpdatesAnim.ref}
+                className={`scroll-slide-left ${recentUpdatesAnim.isVisible ? 'visible' : ''}`}
+              >
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">Recently Updated Workflows</h2>
                 <div className="space-y-5">
                   <RecentUpdate
@@ -100,7 +110,10 @@ const Home = () => {
               </div>
 
               {/* Recommended Guides */}
-              <div>
+              <div 
+                ref={guidesAnim.ref}
+                className={`scroll-slide-right ${guidesAnim.isVisible ? 'visible' : ''}`}
+              >
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">Recommended Guides</h2>
                 <div className="space-y-5">
                   <RecentUpdate
