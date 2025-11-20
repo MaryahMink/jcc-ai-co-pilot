@@ -25,6 +25,15 @@ export default {
           dark: "hsl(var(--primary-dark))",
           "dark-foreground": "hsl(var(--primary-dark-foreground))",
         },
+        teal: {
+          medium: "hsl(var(--teal-medium))",
+          "medium-foreground": "hsl(var(--teal-medium-foreground))",
+        },
+        layer: {
+          1: "hsl(var(--background-layer-1))",
+          2: "hsl(var(--background-layer-2))",
+          3: "hsl(var(--background-layer-3))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -51,15 +60,18 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-teal': 'var(--gradient-teal-primary)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-hero-overlay': 'var(--gradient-hero-overlay)',
         'gradient-teal-atmospheric': 'var(--gradient-teal-atmospheric)',
         'gradient-teal-deep': 'var(--gradient-teal-deep)',
         'gradient-accent': 'var(--gradient-accent-glow)',
         'gradient-card': 'var(--gradient-card)',
+        'gradient-layer': 'var(--gradient-layer)',
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'card-hover': 'var(--shadow-card-hover)',
+        'elevated': 'var(--shadow-elevated)',
         'glow': 'var(--shadow-glow)',
         'depth': 'var(--shadow-depth)',
       },
