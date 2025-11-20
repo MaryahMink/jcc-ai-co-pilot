@@ -15,7 +15,7 @@ import Analytics from "./pages/Analytics";
 import Templates from "./pages/Templates";
 import NotFound from "./pages/NotFound";
 const App = () => <Routes>
-    <Route path="/" element={<Home />} className="bg-slate-950 text-slate-900" />
+    <Route path="/" element={<Home />} />
     <Route path="/auth" element={<Auth />} />
     <Route path="/automations" element={<Automations />} />
     <Route path="/automations/:id" element={<AutomationDetail />} />
