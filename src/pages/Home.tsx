@@ -37,14 +37,14 @@ const Home = () => {
       </section>
 
       {/* Main Content - Layered Gray Background */}
-      <main className="relative bg-gradient-layer text-slate-50 bg-gray-950">
+      <main className="relative bg-gradient-layer">
         {/* Quick Access Section */}
         <section ref={quickAccessAnim.ref} className={`container mx-auto px-4 py-16 relative z-10 scroll-fade-in ${quickAccessAnim.isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12">Quick Access</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <WorkflowCard title="Gmail & Calendar Automation" description="Automate Gmail responses, calendar scheduling, and meeting reminders with AI-powered workflows." icon={Mail} to="/automations/email-calendar" />
             <WorkflowCard title="Slack Reminder Agent" description="Set up intelligent Slack agents to manage team reminders, notifications, and updates." icon={MessageSquare} iconColor="text-accent" to="/automations/slack" />
-            <WorkflowCard title="Asana Workflow Automation" description="Streamline project management with automated task creation, updates, and tracking." icon={CheckSquare} iconColor="text-primary" to="/automations/asana" comingSoon className="bg-slate-950 text-slate-900" />
+            <WorkflowCard title="Asana Workflow Automation" description="Streamline project management with automated task creation, updates, and tracking." icon={CheckSquare} iconColor="text-primary" to="/automations/asana" comingSoon />
           </div>
         </section>
 
