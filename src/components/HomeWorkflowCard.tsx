@@ -11,7 +11,7 @@ interface WorkflowDetails {
   webhookUrl?: string;
 }
 
-interface AutomationWorkflowCardProps {
+interface HomeWorkflowCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
@@ -20,14 +20,14 @@ interface AutomationWorkflowCardProps {
   workflowDetails: WorkflowDetails;
 }
 
-const AutomationWorkflowCard = ({
+const HomeWorkflowCard = ({
   title,
   description,
   icon: Icon,
   iconColor = "text-primary",
   comingSoon = false,
   workflowDetails,
-}: AutomationWorkflowCardProps) => {
+}: HomeWorkflowCardProps) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -105,4 +105,4 @@ const AutomationWorkflowCard = ({
   );
 };
 
-export default AutomationWorkflowCard;
+export default HomeWorkflowCard;

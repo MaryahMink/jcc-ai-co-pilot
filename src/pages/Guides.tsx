@@ -8,37 +8,40 @@ const Guides = () => {
     {
       title: "Getting Started",
       icon: Zap,
+      description: "Welcome to the JCC AI Hub Documentation. This hub is designed for Jacksonville Civic Council team members who want to understand, navigate, and make the most of our automation tools.",
       guides: [
-        { name: "Setting Up Your First Workflow", href: "/guides/getting-started" },
-        { name: "Understanding Automation Triggers", href: "/guides/triggers" },
-        { name: "Connecting Your Tools", href: "/guides/integrations" },
+        { name: "What is the Documentation Hub?", href: "/guides/intro" },
+        { name: "Who is this for?", href: "/guides/audience" },
+        { name: "How to navigate this hub", href: "/guides/navigation" },
       ]
     },
     {
       title: "Best Practices",
       icon: BookOpen,
+      description: "High-level guidance to help you create clear, effective documentation and maintain consistency across your team.",
       guides: [
-        { name: "Crafting Effective AI Prompts", href: "/guides/prompting" },
-        { name: "Optimizing Workflow Performance", href: "/guides/optimization" },
-        { name: "Testing and Validation", href: "/guides/testing" },
+        { name: "Writing clear internal documentation", href: "/guides/clear-docs" },
+        { name: "Maintaining consistency", href: "/guides/consistency" },
+        { name: "Avoiding over-documentation", href: "/guides/minimal-docs" },
       ]
     },
     {
       title: "Security & Privacy",
       icon: Shield,
+      description: "General reminders about handling information safely and maintaining access awareness within the organization.",
       guides: [
-        { name: "Data Safety & Privacy", href: "/guides/data-safety" },
-        { name: "Managing Access Permissions", href: "/guides/permissions" },
-        { name: "Audit Logs & Compliance", href: "/guides/compliance" },
+        { name: "Handling information safely", href: "/guides/safe-handling" },
+        { name: "Access awareness", href: "/guides/access-awareness" },
       ]
     },
     {
       title: "Team Collaboration",
       icon: Users,
+      description: "Practical guidance on working together, documenting shared processes, and keeping shared information organized.",
       guides: [
-        { name: "Sharing Workflows with Team Members", href: "/guides/sharing" },
-        { name: "Collaboration Best Practices", href: "/guides/collaboration" },
-        { name: "Workflow Templates Library", href: "/guides/templates" },
+        { name: "Working together effectively", href: "/guides/teamwork" },
+        { name: "Documenting shared processes", href: "/guides/shared-processes" },
+        { name: "Keeping shared information organized", href: "/guides/organization" },
       ]
     }
   ];
@@ -53,7 +56,7 @@ const Guides = () => {
             Documentation Hub
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Comprehensive guides, best practices, and reference materials to help you make the most of JCC AI Hub automations.
+            Your guide to understanding and navigating the JCC AI Hub. Simple, clear, and designed for everyone on the team.
           </p>
         </section>
 
@@ -65,6 +68,9 @@ const Guides = () => {
                   <category.icon className="w-5 h-5 text-primary" />
                   {category.title}
                 </CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {category.description}
+                </p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -93,16 +99,15 @@ const Guides = () => {
                 <BookOpen className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">New to AI Automation?</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">New to the AI Hub?</h3>
                 <p className="text-muted-foreground mb-4">
-                  Start with our comprehensive getting started guide to understand the basics of workflow automation, 
-                  AI capabilities, and how to build your first automation in minutes.
+                  Start with our Getting Started section to learn what this hub is, who it's for, and how to find what you need quickly.
                 </p>
                 <Link 
-                  to="/guides/getting-started"
+                  to="/guides/intro"
                   className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-colors font-medium"
                 >
-                  View Getting Started Guide
+                  View Getting Started
                 </Link>
               </div>
             </div>

@@ -6,8 +6,9 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { LucideIcon, Play, Zap, CheckCircle, Clock, Users } from "lucide-react";
+import { LucideIcon, Play, Zap, CheckCircle, Clock, Users, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 interface WorkflowDetailSheetProps {
   open: boolean;
@@ -19,6 +20,7 @@ interface WorkflowDetailSheetProps {
     howItWorks: string[];
     valueProposition: string[];
     createdBy?: string;
+    webhookUrl?: string;
   } | null;
 }
 
@@ -27,13 +29,43 @@ const WorkflowDetailSheet = ({
   onOpenChange,
   workflow,
 }: WorkflowDetailSheetProps) => {
+  const [isActivating, setIsActivating] = useState(false);
+
   if (!workflow) return null;
 
-  const handleActivateWorkflow = () => {
-    toast({
-      title: "Workflow Activation Requested",
-      description: `The ${workflow.title} workflow activation has been initiated. Connect your n8n instance to complete setup.`,
-    });
+  const handleActivateWorkflow = async () => {
+    if (!workflow.webhookUrl) {
+      toast({
+        title: "Configuration Required",
+        description: `The ${workflow.title} workflow does not have a webhook URL configured.`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsActivating(true);
+    
+    try {
+      const response = await fetch(workflow.webhookUrl, {
+        method: "GET",
+        mode: "no-cors",
+      });
+      
+      // Since we're using no-cors, we can't read the response
+      // but if we get here without throwing, the request was sent
+      toast({
+        title: "Workflow Activated",
+        description: `The ${workflow.title} workflow has been triggered successfully.`,
+      });
+    } catch (error) {
+      toast({
+        title: "Activation Failed",
+        description: `Failed to activate ${workflow.title}. Please try again or check the webhook configuration.`,
+        variant: "destructive",
+      });
+    } finally {
+      setIsActivating(false);
+    }
   };
 
   return (
@@ -62,10 +94,20 @@ const WorkflowDetailSheet = ({
           {/* Activation Button */}
           <Button
             onClick={handleActivateWorkflow}
+            disabled={isActivating}
             className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 text-lg rounded-xl shadow-glow"
           >
-            <Play className="w-5 h-5 mr-2" />
-            Activate n8n Workflow
+            {isActivating ? (
+              <>
+                <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                Activating...
+              </>
+            ) : (
+              <>
+                <Play className="w-5 h-5 mr-2" />
+                Activate n8n Workflow
+              </>
+            )}
           </Button>
 
           {/* How It Works */}

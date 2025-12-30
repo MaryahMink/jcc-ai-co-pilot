@@ -1,10 +1,58 @@
 import Navigation from "@/components/Navigation";
-import WorkflowCard from "@/components/WorkflowCard";
+import HomeWorkflowCard from "@/components/HomeWorkflowCard";
 import GuideCard from "@/components/GuideCard";
 import { Mail, MessageSquare, CheckSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const workflowData = {
+  gmailAutoResponder: {
+    howItWorks: [
+      "Incoming emails are automatically scanned for keywords, sentiment, and priority indicators.",
+      "AI analyzes the content and categorizes the email based on predefined rules.",
+      "Appropriate response templates are selected or AI generates contextual replies.",
+      "Responses are sent automatically or queued for review based on confidence levels.",
+    ],
+    valueProposition: [
+      "Reduces email response time from hours to seconds for routine inquiries.",
+      "Ensures consistent, professional communication across all team members.",
+      "Frees up staff time for higher-priority civic engagement activities.",
+      "Maintains 24/7 responsiveness to citizen inquiries.",
+    ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/JCC-Email",
+  },
+  dailyDigest: {
+    howItWorks: [
+      "Aggregates activity from selected Slack channels over a 24-hour period.",
+      "AI summarizes key discussions, decisions, and action items.",
+      "Compiles mentions, reactions, and thread highlights into a digestible format.",
+      "Delivers the summary to designated channels or individuals at scheduled times.",
+    ],
+    valueProposition: [
+      "Keeps team members informed without requiring them to read every message.",
+      "Improves daily knowledge flow and reduces information silos.",
+      "Highlights important decisions and action items that might otherwise be missed.",
+      "Saves hours of catch-up time for team members who were unavailable.",
+    ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/b5fc872f-863e-40d1-9d94-59206ad502de",
+  },
+  asanaTaskCreation: {
+    howItWorks: [
+      "Monitors email, Slack, and calendar for actionable items.",
+      "AI identifies tasks and extracts relevant details (assignee, due date, priority).",
+      "Tasks are automatically created in the appropriate Asana project.",
+      "Notifications are sent to assignees with full context and links.",
+    ],
+    valueProposition: [
+      "Eliminates manual task entry and reduces data entry errors.",
+      "Ensures no action items fall through the cracks.",
+      "Accelerates task movement from identification to assignment.",
+      "Provides consistent task formatting and categorization.",
+    ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/AsanaGET",
+  },
+};
 
 const Home = () => {
   const quickAccessAnim = useScrollAnimation();
@@ -44,26 +92,25 @@ const Home = () => {
         <section ref={quickAccessAnim.ref} className={`container mx-auto px-4 py-16 relative z-10 scroll-fade-in ${quickAccessAnim.isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12">Quick Access</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <WorkflowCard 
-              title="Gmail Auto Responder" 
+            <HomeWorkflowCard 
+              title="Gmail Auto-Responder" 
               description="Automate Gmail responses with AI-powered intelligent email workflows." 
               icon={Mail} 
-              to="/automations/gmail-auto-responder/setup" 
+              workflowDetails={workflowData.gmailAutoResponder}
             />
-            <WorkflowCard 
-              title="Slack Reminder Workflow" 
-              description="Set up intelligent Slack workflows to manage team reminders, notifications, and updates." 
+            <HomeWorkflowCard 
+              title="Daily Digest Agent" 
+              description="Compile and distribute daily summaries of channel activity, mentions, and action items." 
               icon={MessageSquare} 
-              iconColor="text-accent" 
-              to="/automations/slack" 
+              iconColor="text-accent"
+              workflowDetails={workflowData.dailyDigest}
             />
-            <WorkflowCard 
+            <HomeWorkflowCard 
               title="Asana Workflow Automation" 
               description="Streamline project management with automated task creation, updates, and tracking." 
               icon={CheckSquare} 
-              iconColor="text-primary" 
-              to="/automations/asana" 
-              comingSoon 
+              iconColor="text-primary"
+              workflowDetails={workflowData.asanaTaskCreation}
             />
           </div>
         </section>

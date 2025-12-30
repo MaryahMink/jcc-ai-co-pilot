@@ -16,6 +16,7 @@ const workflowData = {
       "Frees up staff time for higher-priority civic engagement activities.",
       "Maintains 24/7 responsiveness to citizen inquiries.",
     ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/JCC-Email",
   },
   calendarSync: {
     howItWorks: [
@@ -30,6 +31,7 @@ const workflowData = {
       "Ensures all stakeholders are informed of schedule changes instantly.",
       "Improves meeting attendance and preparation rates.",
     ],
+    webhookUrl: "https://efuller.app.n8n.cloud/webhook/18680451-dfdf-4c25-a745-e77c92bbb5a9",
   },
   teamReminder: {
     howItWorks: [
@@ -59,6 +61,7 @@ const workflowData = {
       "Highlights important decisions and action items that might otherwise be missed.",
       "Saves hours of catch-up time for team members who were unavailable.",
     ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/b5fc872f-863e-40d1-9d94-59206ad502de",
   },
   asanaTaskCreation: {
     howItWorks: [
@@ -73,20 +76,7 @@ const workflowData = {
       "Accelerates task movement from identification to assignment.",
       "Provides consistent task formatting and categorization.",
     ],
-  },
-  projectStatus: {
-    howItWorks: [
-      "Analyzes task completion rates, overdue items, and project milestones.",
-      "Generates visual reports with charts and key metrics.",
-      "Distributes reports to stakeholders on configurable schedules.",
-      "Highlights risks and blockers requiring attention.",
-    ],
-    valueProposition: [
-      "Provides real-time visibility into project health without manual reporting.",
-      "Enables proactive issue resolution before problems escalate.",
-      "Ensures consistent reporting across all Jacksonville Civic Council projects.",
-      "Saves project managers hours of report compilation time weekly.",
-    ],
+    webhookUrl: "https://myvillageproject.app.n8n.cloud/webhook/AsanaGET",
   },
 };
 
@@ -170,14 +160,6 @@ const Automations = () => {
               iconColor="text-primary-dark"
               comingSoon
               workflowDetails={workflowData.asanaTaskCreation}
-            />
-            <AutomationWorkflowCard
-              title="Project Status Updates"
-              description="Generate and share automated project status reports based on task completion rates."
-              icon={CheckSquare}
-              iconColor="text-primary-dark"
-              comingSoon
-              workflowDetails={workflowData.projectStatus}
             />
           </div>
         </section>
